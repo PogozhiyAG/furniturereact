@@ -1,0 +1,210 @@
+@import 'vars';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input, button, select{
+    color: inherit;    
+    font-family: inherit;
+    &::placeholder {
+        color: inherit;
+        font-family: inherit;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;    
+}
+
+.position{
+    &__center{
+        margin-left: 24px;
+        margin-right: 24px;
+        padding-left: calc(50% - 624px);
+        padding-right: calc(50% - 624px);    
+    }
+
+    &__gap {
+        &_normal{
+            margin-top: 64px;
+        }
+        
+        &_small {
+            margin-top: 32px;
+        }
+        
+        &_big {
+            margin-top: 128px;
+        }
+    }
+}
+
+.text{
+    &__color{
+        &_light{
+            color: #ffffff;
+        }
+        &_gray{
+            color: #888888;
+        }
+        &_quite-dark{
+            color: #050505;
+        }
+        &_dark{
+            color: #000000;
+        }
+    }
+
+    &__underline{
+        text-decoration: underline;
+    }
+
+    &__line-through{
+        text-decoration-line: line-through;
+    }
+        
+
+    &__size{
+        &_xs{
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 15px;
+        }
+        &_s{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+        }
+        &_sb{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+        }
+        &_m{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        &_mb{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &_l{            
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+        }
+        &_lb{            
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+        }
+        &_lbb{
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+        }
+        &_xl{
+            font-weight: 600;
+            font-size: 34px;
+            line-height: 41px;
+        }
+        &_xxl{
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 59px;
+        }
+        &_xxxl{
+            font-weight: 600;
+            font-size: 64px;
+            line-height: 70px;
+        }
+    }
+}
+
+.header{      
+    
+    &__container{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        background-color: #ccc;
+        align-items: center;
+        justify-content: space-between; 
+        padding: 16px 5px;
+    }
+
+    &__nav-container{
+        display: flex; 
+        gap: 32px;       
+    }
+}
+
+
+.command-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;    
+    gap: $gap;
+
+    &-select {
+        width: 295px;
+        height: 41px;
+        border: 1px solid #C4C4C4;
+        border-radius: 20px;        
+        outline: none;
+        padding-left: 15px;
+        padding-right: 50px;        
+        color: #000000;
+        appearance: none;
+        background: url(./img/select-drop-down-arrow.svg);
+        background-repeat: no-repeat;
+        background-position-x: calc(100% - 20px);
+        background-position-y: center;
+    }
+}
+
+.product{
+    &__list-content {
+        display: grid;                
+        grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
+        justify-items: center;
+        column-gap: 32px;
+        row-gap: 56px;
+    }
+
+    &__box {        
+        max-width: 378px;
+    }
+
+    &__image {
+        width: 380px;
+        height: 250px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    &__title {       
+        margin-bottom: 8px;
+    }
+
+    &__desc {        
+        margin-bottom: 12px;
+    }
+
+    &__price-box {
+        display: flex;
+        gap: $gap;
+    }
+}
