@@ -6,6 +6,12 @@ const catalogData = [
         imageUrl: 'tatran.jfif'
     },
     {
+        name: 'Кресло LUNAR',
+        description: 'Прекрасно переносит солнечные лучи, перепады влажности и любые осадки.',
+        price: 40000,
+        imageUrl: 'lunar.jfif'
+    },
+    {
         name: 'Кресло VILORA',
         description: 'Мягкое и уютное, аккуратное и стильное. Упругие подушки сиденья и приятная на ощупь ткань.',
         price: 21000,
@@ -22,13 +28,7 @@ const catalogData = [
         description: 'Благодаря защелкивающемуся механизму диван легко раскладывается в комфортную кровать.',
         price: 68000,
         imageUrl: 'askesta.png'
-    },
-    {
-        name: 'Кресло LUNAR',
-        description: 'Прекрасно переносит солнечные лучи, перепады влажности и любые осадки.',
-        price: 40000,
-        imageUrl: 'lunar.jfif'
-    },
+    },    
     {
         name: 'Шкаф NASTAN',
         description: 'Мебель может быть оснащена разнообразными системами подсветки.',
