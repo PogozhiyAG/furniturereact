@@ -140,8 +140,7 @@ body {
     text-decoration: underline;
 }
 
-.header{      
-    
+.header{          
     &__container{
         display: flex;
         flex-direction: row;
@@ -155,6 +154,16 @@ body {
     &__nav-container{
         display: flex; 
         gap: 32px;       
+    }
+
+    &__nav-container-mobile{
+        display: none;
+        gap:32px;        
+    }
+
+    &__logo{
+        font-weight: 600;
+        font-size: 36px;
     }
 }
 
@@ -417,3 +426,8 @@ body {
     }
 }
 
+
+
+
+
+@import 'mobile';
