@@ -13,16 +13,6 @@ const ProductList = ( {catalogData, basket} ) => {
         }
     }
 
-    const buttonAddClick = () =>{
-        basket.add(catalogData[0]);
-    }
-    const buttonSetClick = () =>{
-        basket.set(catalogData[0], 5);
-    }
-    const buttonClearClick = () =>{
-        basket.clear();
-    }
-
     return(
         <>
             <section className="position__center position__gap_small">
@@ -39,12 +29,6 @@ const ProductList = ( {catalogData, basket} ) => {
                             .map(product => (<ProductCart key={product.name} product={product} basket={basket}/>)) 
                     }
                 </div>
-                {JSON.stringify(basket.basketItems)}
-                
-                <button onClick={buttonAddClick}>Add</button>
-                <button onClick={buttonSetClick}>Set</button>
-                <button onClick={buttonClearClick}>Clear</button>
-                {basket.getTotalAmount()}
             </section>
         </>
     );

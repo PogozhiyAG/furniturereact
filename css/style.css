@@ -121,6 +121,10 @@ body {
   line-height: 70px;
 }
 
+.link_hover:hover {
+  text-decoration: underline;
+}
+
 .header__container {
   display: flex;
   flex-direction: row;
@@ -201,6 +205,7 @@ body {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 10px;
 }
 .product__title {
   margin-bottom: 8px;
@@ -271,6 +276,7 @@ body {
   gap: 16px;
 }
 .cart-command-bar__button {
+  cursor: pointer;
   background: transparent;
   color: #000000;
   border: 1px solid #000;
@@ -307,6 +313,7 @@ body {
   margin-top: 64px;
 }
 .cart-form__button {
+  cursor: pointer;
   background: transparent;
   color: #000000;
   border: 1px solid #000;
@@ -318,4 +325,39 @@ body {
 .cart-form__button:hover {
   background: #000000;
   color: #FFFFFF;
+}
+
+.numeric-input__container {
+  position: relative;
+  height: 50px;
+}
+.numeric-input__input {
+  width: 70px;
+  height: 50px;
+  text-align: right;
+  padding-right: 42px;
+  outline: none;
+  background: #F7F6F6;
+  border-radius: 6px;
+  border: none;
+}
+.numeric-input__button {
+  border-style: none;
+  position: absolute;
+  right: 0px;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+}
+.numeric-input__button:hover {
+  cursor: pointer;
+  background: #e7e6e6;
+}
+.numeric-input__button_up {
+  border-radius: 0 5px 0 0;
+  top: 0;
+}
+.numeric-input__button_down {
+  border-radius: 0 0 5px 0;
+  bottom: 0;
 }/*# sourceMappingURL=style.css.map */

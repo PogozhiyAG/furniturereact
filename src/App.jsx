@@ -10,12 +10,14 @@ const App = () => {
 
     const basket = {
         basketItems,        
-        add: (product) => {               
+        add: (product) => {              
             let found = false;
             let newItems = basketItems.map(entry => {
                 if(entry.product === product){
                     found = true;
-                    entry.quantity += 1;
+                    if(product.available > entry.quantity){
+                        entry.quantity += 1;
+                    }
                 }
                 return entry;
             });
@@ -25,6 +27,9 @@ const App = () => {
             setBasketItems(newItems);
         },   
         set: (product, quantity) => {
+            if(product.available < quantity){
+                return;
+            }
             let newItems = [];  
             if(quantity > 0){
                 let found = false;

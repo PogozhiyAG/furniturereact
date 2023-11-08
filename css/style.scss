@@ -136,6 +136,10 @@ body {
     }
 }
 
+.link_hover:hover {    
+    text-decoration: underline;
+}
+
 .header{      
     
     &__container{
@@ -190,8 +194,7 @@ body {
         row-gap: 56px;
     }
 
-    &__box {        
-        
+    &__box {
         max-width: 378px;
     }
 
@@ -219,13 +222,13 @@ body {
         cursor: pointer;
         width: 24px;
         margin: 10px;
-
     }
 
     &__image {
         width: 380px;
         height: 250px;
-        object-fit: cover;               
+        object-fit: cover;
+        margin-bottom: 10px;
     }
 
     &__title {       
@@ -313,6 +316,7 @@ body {
         gap:16px;
 
         &__button {
+            cursor: pointer;
             background: transparent;
             color: #000000;
             border: 1px solid #000;
@@ -355,6 +359,7 @@ body {
         }
     
         &__button {
+            cursor: pointer;
             background: transparent;
             color: #000000;
             border: 1px solid #000;            
@@ -371,3 +376,44 @@ body {
     }
 
 }
+
+
+
+.numeric-input{
+    &__container{
+        position: relative;
+        height: 50px;
+    }
+    &__input{
+        width: 70px;
+        height: 50px;
+        text-align: right;
+        padding-right: 42px;
+        outline: none;
+        background: #F7F6F6;
+        border-radius: 6px;
+        border: none;
+    }
+    &__button{
+        border-style: none;
+        position: absolute;
+        right: 0px;
+        
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        &:hover{
+            cursor: pointer;
+            background: #e7e6e6;
+        }
+        &_up{
+            border-radius: 0 5px 0 0;
+            top: 0;
+        }
+        &_down{
+            border-radius: 0 0 5px 0;
+            bottom: 0;
+        }
+    }
+}
+
