@@ -302,12 +302,16 @@ body {
   display: flex;
   flex-direction: column;
   height: 560px;
+  width: 343px;
   background: #F7F6F6;
   border-radius: 20px;
   padding: 42px 32px;
 }
 .cart-form__title {
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
 }
 .cart-form__input {
   border: none;
