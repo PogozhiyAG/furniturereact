@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductCart from "./product-cart";
 
-const ProductList = ( {productList, basket} ) => {
+const ProductList = ( {catalogData, basket} ) => {
     const [sortOrder, setSortOrder] = useState('');
 
     const onSortOrderChangeHandler = event => setSortOrder(event.target.value);
@@ -13,8 +13,14 @@ const ProductList = ( {productList, basket} ) => {
         }
     }
 
-    const buttonClick = () =>{
-        basket.save();
+    const buttonAddClick = () =>{
+        basket.add(catalogData[0]);
+    }
+    const buttonSetClick = () =>{
+        basket.set(catalogData[0], 5);
+    }
+    const buttonClearClick = () =>{
+        basket.clear();
     }
 
     return(
@@ -28,13 +34,17 @@ const ProductList = ( {productList, basket} ) => {
                 </div>
                 <div className="product__list-content">
                     {
-                        productList
+                        catalogData
                             .sort(getOrderFunction())
                             .map(product => (<ProductCart key={product.name} product={product} basket={basket}/>)) 
                     }
                 </div>
+                {JSON.stringify(basket.basketItems)}
                 
-                <button onClick={buttonClick}>Button</button>
+                <button onClick={buttonAddClick}>Add</button>
+                <button onClick={buttonSetClick}>Set</button>
+                <button onClick={buttonClearClick}>Clear</button>
+                {basket.getTotalAmount()}
             </section>
         </>
     );

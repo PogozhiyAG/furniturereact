@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PageHeader = () => (
   <header className="header position__center text__color_light">
@@ -7,8 +8,8 @@ const PageHeader = () => (
               Интерьер.
           </div>
           <nav className="header__nav-container text__size_m">
-              <a href="index.html" className="link_hover">Каталог</a>
-              <a href="cart.html" className="link_hover">Корзина</a>
+              <Link to="/" className="link_hover">Каталог</Link>
+              <Link to="/cart" className="link_hover">Корзина</Link>              
           </nav>
       </div>
   </header>

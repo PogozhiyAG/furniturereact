@@ -1,27 +1,69 @@
-import React from "react";
-import PageHeader from "./components/page-header"
+import React, { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import catalogData from "./data"
-import ProductList from "./components/product-list"
+import CatalogPage from "./pages/CatalogPage";
+import CartPage from "./pages/CartPage";
 
-function Basket() {
 
-  this.items = {},
-  this.name = "Basket",
-  this.add = function (id) {
-    this.items[id] = 5;
-  };  
-}
+const App = () => {
+    const [basketItems, setBasketItems] = useState([]);
 
-export default () => {
-  
-  const basket = new Basket();
-  basket.add('Стол MENU');
+    const basket = {
+        basketItems,        
+        add: (product) => {               
+            let found = false;
+            let newItems = basketItems.map(entry => {
+                if(entry.product === product){
+                    found = true;
+                    entry.quantity += 1;
+                }
+                return entry;
+            });
+            if(!found){
+                newItems.push({product, quantity: 1})
+            }
+            setBasketItems(newItems);
+        },   
+        set: (product, quantity) => {
+            let newItems = [];  
+            if(quantity > 0){
+                let found = false;
+                newItems = basketItems.map(entry => {
+                    if(entry.product === product){
+                        found = true;
+                        entry.quantity = quantity;
+                    }
+                    return entry;
+                });  
+                if(!found){
+                    newItems.push({product, quantity})
+                }
+            }
+            else{
+                newItems = basketItems.filter(entry => entry.product !== product)
+            }
+            setBasketItems(newItems);
+        },
+        getTotalAmount: () => basketItems.reduce((a, p) => a + p.quantity * p.product.price, 0) ,    
+        clear: () => setBasketItems([])
+    };
 
-  return (
-    <>
-      <PageHeader />
-      <ProductList productList={catalogData} basket={basket}/>
 
-    </>
-  )
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <CatalogPage catalogData={catalogData} basket={basket} />,
+        },
+        {
+            path: "cart",
+            element: <CartPage basket={basket}/>,
+        },
+    ]);
+
+    return (
+        <RouterProvider router={router} />
+    );
 };
+
+export default App;
