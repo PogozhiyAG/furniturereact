@@ -5,14 +5,10 @@ import ProductBasketCart from "../components/product-basket-cart";
 import CheckoutForm from "../components/checkout-form";
 
 const CartPage = ({ basket }) => {
-    const clearBasketClickHandler = () =>{
-        basket.clear();
-    };
+    const clearBasketClickHandler = () => basket.clear();
 
     const navigate = useNavigate();
-    const goToCatalogClickHandler = () => {
-        navigate("/")
-    };
+    const goToCatalogClickHandler = () => navigate("/");
 
     return (
         <>
@@ -36,6 +32,7 @@ const CartPage = ({ basket }) => {
                <CheckoutForm basket={basket}/>
             </section>
         </>
-)};
+    )
+};
 
 export default CartPage;
